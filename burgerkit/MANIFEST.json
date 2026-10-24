@@ -1,0 +1,504 @@
+[
+  {
+    "file": "01_Environment_References/001_a_clean_cute_sprite_sheet_style_illustration_on_a.png",
+    "source": "a_clean_cute_sprite_sheet_style_illustration_on_a.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "930a3e90458d520e52e7f04b81fc0ed8b9245fdf6a7eb19acd2f2044af1a998a"
+  },
+  {
+    "file": "01_Environment_References/002_a_clean_flat_cartoon_illustration_sprite_sheet_s.png",
+    "source": "a_clean_flat_cartoon_illustration_sprite_sheet_s.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "eb311e4adcba025ab82e0ae62abe97e49ac16511ba22833b4956bb5313d50bf2"
+  },
+  {
+    "file": "01_Environment_References/003_a_clean_colorful_game_asset_style_infographic_atl.png",
+    "source": "a_clean_colorful_game_asset_style_infographic_atl.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "b23c3bef6ed3a170281aeb68051c34554c2513d6a3694bbeffd718b2468c7382"
+  },
+  {
+    "file": "01_Environment_References/004_a_clean_flat_cute_cartoon_illustration_asset_she.png",
+    "source": "a_clean_flat_cute_cartoon_illustration_asset_she.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "5cc050d3e1e452ad79c1f4c9c92917db7685dd793a27c2081a070fb02736983f"
+  },
+  {
+    "file": "01_Environment_References/005_a_clean_flat_illustrated_sprite_sheet_style_imag.png",
+    "source": "a_clean_flat_illustrated_sprite_sheet_style_imag.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "92cb2e71291fa952eef0d021dd9254cdc76f9c4893732de60ddadfd14864c88a"
+  },
+  {
+    "file": "01_Environment_References/006_wide_clean_cartoon_illustration_reference_sheet_o.png",
+    "source": "wide_clean_cartoon_illustration_reference_sheet_o.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "4be8a006d172f0c881045143c44083ede4fc65aa3fbd5dc8b580e834f136a3f6"
+  },
+  {
+    "file": "01_Environment_References/007_a_clean_colorful_2d_3d_isometric_game_asset_sheet.png",
+    "source": "a_clean_colorful_2d_3d_isometric_game_asset_sheet.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "688e2130bd3a038062a62078a39f3e7f851a7fab632e56a80f092da4056d634a"
+  },
+  {
+    "file": "01_Environment_References/008_a_clean_flat_cute_game_art_style_sprite_sheet_r.png",
+    "source": "a_clean_flat_cute_game_art_style_sprite_sheet_r.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "02bc9a073a9d136c12bb6d8aa3a1d448ff15ad23ed3a0cfd9fcd82b4730d32b3"
+  },
+  {
+    "file": "01_Environment_References/009_a_clean_colorful_isometric_vector_game_asset_shee.png",
+    "source": "a_clean_colorful_isometric_vector_game_asset_shee.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "1b886b06fef31e0c7c143dce796f76a7bd9f991c48fdd4e36bab4eaf0f8f59ae"
+  },
+  {
+    "file": "01_Environment_References/010_wide_clean_cartoon_cute_vector_art_style_asset_s.png",
+    "source": "wide_clean_cartoon_cute_vector_art_style_asset_s.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "cb430815e54064aab793bac2bcdd76f482e625a75dc9dd2f1656549470b99b2b"
+  },
+  {
+    "file": "02_Stations_And_Furniture/011_a_clean_studio_style_character_sprite_sheet_on_a.png",
+    "source": "a_clean_studio_style_character_sprite_sheet_on_a.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "40af5ecee874a5ef4459b67a795d861907d836b38687ffea85432538688ba2c2"
+  },
+  {
+    "file": "99_Rejected_Layouts_Do_Not_Integrate/012_a_wide_tall_infographic_style_game_layout_sheet.png",
+    "source": "a_wide_tall_infographic_style_game_layout_sheet.png",
+    "status": "REJECTED_LAYOUT_DRAFT",
+    "sha256": "6df20231028a0952845cb6409696743789baaea627d0fa02dc246f474e9fc00f"
+  },
+  {
+    "file": "02_Stations_And_Furniture/013_a_clean_game_art_sprite_sheet_layout_on_a_white_cr.png",
+    "source": "a_clean_game_art_sprite_sheet_layout_on_a_white_cr.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "da0f4e9ee408a7d850db65635d3280bfc6771514d469f61a931b6e24da40a263"
+  },
+  {
+    "file": "02_Stations_And_Furniture/014_a_clean_colorful_cartoon_isometric_game_asset_sh.png",
+    "source": "a_clean_colorful_cartoon_isometric_game_asset_sh.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "f3d23d0589cc3642cc9774aab6f3a5f04162eb532dce7aded8aad9c999aafa83"
+  },
+  {
+    "file": "02_Stations_And_Furniture/015_wide_clean_cartoon_game_sprite_sheet_style_illus.png",
+    "source": "wide_clean_cartoon_game_sprite_sheet_style_illus.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "efab524a664684cffdcbb389e76bf44612f3ef10a9598adad4356bfb0431c49f"
+  },
+  {
+    "file": "02_Stations_And_Furniture/016_a_clean_white_background_sprite_sheet_illustration.png",
+    "source": "a_clean_white_background_sprite_sheet_illustration.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "0ae121f3e1b6035b0ec2d85035a1096d322f971c3d939c2fb1b18f36f4c6461b"
+  },
+  {
+    "file": "02_Stations_And_Furniture/017_wide_clean_colorful_character_asset_sheet_illust.png",
+    "source": "wide_clean_colorful_character_asset_sheet_illust.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "ce86a5781bea77390a15eda294de9355e45e9e57952ac46c2f56649cef501992"
+  },
+  {
+    "file": "02_Stations_And_Furniture/018_a_clean_flat_2d_game_asset_sprite_sheet_storybo.png",
+    "source": "a_clean_flat_2d_game_asset_sprite_sheet_storybo.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "ec094a4c9eed338d9c1f58e4a24431330dadfebebd259e30b11fbbb4e9677dd4"
+  },
+  {
+    "file": "02_Stations_And_Furniture/019_a_clean_high_resolution_isometric_cute_cartoon_a.png",
+    "source": "a_clean_high_resolution_isometric_cute_cartoon_a.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "e77971ef18fbdfeaa15cfdb40ddff80a6ee924069d2b58621e891f97329cb63b"
+  },
+  {
+    "file": "02_Stations_And_Furniture/020_a_clean_infographic_game_asset_sheet_in_a_cute_c.png",
+    "source": "a_clean_infographic_game_asset_sheet_in_a_cute_c.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "e73f953ee66a46d720e7e7506b26425db0ed2214cda3cd6b07c8794da639af04"
+  },
+  {
+    "file": "02_Stations_And_Furniture/021_a_clean_flat_vector_style_sprite_sheet_graphic_on.png",
+    "source": "a_clean_flat_vector_style_sprite_sheet_graphic_on.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "ce85ee6512357936cf7a49448459d8fc8b8b5533c5df28691e8f9c08f81ea15d"
+  },
+  {
+    "file": "02_Stations_And_Furniture/022_a_clean_colorful_isometric_3d_2.5d_game_asset_st.png",
+    "source": "a_clean_colorful_isometric_3d_2.5d_game_asset_st.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "39f524747bcbd905b2a8c1a8f05e51019271c8d43be7b5f6482169fa8bdd6ff5"
+  },
+  {
+    "file": "02_Stations_And_Furniture/023_wide_clean_illustrated_asset_sheet_in_a_flat_sof.png",
+    "source": "wide_clean_illustrated_asset_sheet_in_a_flat_sof.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "4498d37fc9e0f45d33606d466d4d8f56f7fc417f84df03bd6523d8948f4d3f17"
+  },
+  {
+    "file": "02_Stations_And_Furniture/024_wide_clean_white_canvas_illustration_panel_showi.png",
+    "source": "wide_clean_white_canvas_illustration_panel_showi.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "941301af4fe567fc6e15e0b2c81affbe79343506362210cd85e7a3e9e984cecf"
+  },
+  {
+    "file": "02_Stations_And_Furniture/025_a_clean_colorful_flat_soft_shaded_cartoon_style.png",
+    "source": "a_clean_colorful_flat_soft_shaded_cartoon_style.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "4202f87e8a3b18b94135c14b86dea98cccd57ae4c9268ae648193787fdd6dfe7"
+  },
+  {
+    "file": "03_Characters_And_Animations/026_a_clean_flat_vector_cute_2d_character_sprite_sheet.png",
+    "source": "a_clean_flat_vector_cute_2d_character_sprite_sheet.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "66631a1f256b6d28151ba5eaf0d17aa117acab6e9e378493d6f655613f0a242e"
+  },
+  {
+    "file": "03_Characters_And_Animations/027_a_clean_flat_game_art_style_sprite_sheet_asset_b.png",
+    "source": "a_clean_flat_game_art_style_sprite_sheet_asset_b.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "4025e2e3501d385e50211fe8ff99837f98cd6731b7a918bafcf84cbb60373933"
+  },
+  {
+    "file": "03_Characters_And_Animations/028_a_clean_flat_ui_style_sprite_sheet_animation_ref.png",
+    "source": "a_clean_flat_ui_style_sprite_sheet_animation_ref.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "c1d71572d23c97cdbb34014f88f9b6bacf635b51b8ee241df79d0b7002fa4871"
+  },
+  {
+    "file": "03_Characters_And_Animations/029_a_clean_colorful_cartoony_isometric_3d_ish_game.png",
+    "source": "a_clean_colorful_cartoony_isometric_3d_ish_game.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "7f938719465d8a894ba4a90d3be56cb8b99a2c977b306785b16eced6faf360bd"
+  },
+  {
+    "file": "03_Characters_And_Animations/030_a_clean_colorful_cartoony_infographic_asset_shee.png",
+    "source": "a_clean_colorful_cartoony_infographic_asset_shee.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "f208f9ed2dc8d7434395c9ef7384b9233d17a21ad4452b19260b3ab28491270b"
+  },
+  {
+    "file": "03_Characters_And_Animations/031_a_clean_illustration_asset_sheet_style_image_on_a.png",
+    "source": "a_clean_illustration_asset_sheet_style_image_on_a.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "8d785342c6c1f52980039e0addf6a1ccfe7bf72881eed19fba19004394899ead"
+  },
+  {
+    "file": "03_Characters_And_Animations/032_a_clean_high_resolution_cartoon_animation_sprite.png",
+    "source": "a_clean_high_resolution_cartoon_animation_sprite.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "6234582a8355ccff86e30e18356ef999120a493df8c9ffa5b98c18b3eba7c9ab"
+  },
+  {
+    "file": "03_Characters_And_Animations/033_a_clean_high_resolution_sprite_sheet_character.png",
+    "source": "a_clean_high_resolution_sprite_sheet_character.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "fb56440ac3c249c586544c33967992aba766e926acd4bec8b6ae821601a44d8d"
+  },
+  {
+    "file": "03_Characters_And_Animations/034_a_clean_colorful_game_asset_style_infographic_she.png",
+    "source": "a_clean_colorful_game_asset_style_infographic_she.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "cb4d4469f8343d09cfcf3052e63eb503302842f9660b712c5c752adaed1d4762"
+  },
+  {
+    "file": "03_Characters_And_Animations/035_wide_clean_vector_illustration_character_sheet_on.png",
+    "source": "wide_clean_vector_illustration_character_sheet_on.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "6552ff03042d92ce0c83d491f05573baf7a0a2b241dcaf953a6de818f0d944ed"
+  },
+  {
+    "file": "03_Characters_And_Animations/036_a_clean_flat_cute_chibi_game_sprite_sheet_ui_r.png",
+    "source": "a_clean_flat_cute_chibi_game_sprite_sheet_ui_r.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "fd9e7118a68453b92d30d4f6ec4ba557023e6c49b61ee183d8095690853efb63"
+  },
+  {
+    "file": "03_Characters_And_Animations/037_a_clean_colorful_game_art_asset_sheet_in_a_flat_i.png",
+    "source": "a_clean_colorful_game_art_asset_sheet_in_a_flat_i.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "35ef9d5e8fa81e14cc14ce91120b35f07d95f30bd1475ed773362c0ff124d829"
+  },
+  {
+    "file": "03_Characters_And_Animations/038_a_clean_flat_cartoon_asset_sheet_on_a_white_back.png",
+    "source": "a_clean_flat_cartoon_asset_sheet_on_a_white_back.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "cae0f59cec735d939fa214d60c0004a2ba7e19aff217572e6f35a84e3c7c3951"
+  },
+  {
+    "file": "03_Characters_And_Animations/039_a_clean_flat_vector_cell_shaded_game_art_sprite.png",
+    "source": "a_clean_flat_vector_cell_shaded_game_art_sprite.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "33a6079662da2273cca0c2483a03ffbc4db0fbe5cb5b0ac4ee704a971a5e9645"
+  },
+  {
+    "file": "03_Characters_And_Animations/040_wide_sprite_sheet_style_illustration_on_a_clean_wh.png",
+    "source": "wide_sprite_sheet_style_illustration_on_a_clean_wh.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "b34bfbb00b28f576187869ff8af11de489d662f288ebc2f1bdffd0de8ff3e489"
+  },
+  {
+    "file": "99_Rejected_Layouts_Do_Not_Integrate/041_a_bright_colorful_infographic_style_game_ui_map.png",
+    "source": "a_bright_colorful_infographic_style_game_ui_map.png",
+    "status": "REJECTED_LAYOUT_DRAFT",
+    "sha256": "1a9ebd7ee7a878c9ea3286832e614d1553ae78f223492939e66bb43f8b4b705f"
+  },
+  {
+    "file": "03_Characters_And_Animations/042_a_clean_flat_cartoon_sprite_sheet_illustration_o.png",
+    "source": "a_clean_flat_cartoon_sprite_sheet_illustration_o.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "b40d08bea10936ccc71cbef8faae209e3cec8ea24d9afaf35953a2f4a526de2a"
+  },
+  {
+    "file": "03_Characters_And_Animations/043_a_clean_flat_cartoon_style_sprite_sheet_game_a.png",
+    "source": "a_clean_flat_cartoon_style_sprite_sheet_game_a.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "391b6bec718f4bb0e058e29afd1ee44501e8dc7897759f809158cde3ff976ef2"
+  },
+  {
+    "file": "03_Characters_And_Animations/044_a_clean_flat_cartoon_game_sprite_sheet_illustrat.png",
+    "source": "a_clean_flat_cartoon_game_sprite_sheet_illustrat.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "fe95ae5382a2cee9e8e7fc1cc9e6e73b6c31238eda537319008826fd3ca9e825"
+  },
+  {
+    "file": "03_Characters_And_Animations/045_a_clean_colorful_isometric_cartoon_game_asset_ill.png",
+    "source": "a_clean_colorful_isometric_cartoon_game_asset_ill.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "d06774c9d3b4f23caa671f6c965892b37e24da78c3492be8b2d547a80d101e1c"
+  },
+  {
+    "file": "03_Characters_And_Animations/046_a_clean_high_resolution_colorful_isometric_carto.png",
+    "source": "a_clean_high_resolution_colorful_isometric_carto.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "71a95c13e247e7da314e4ae598a4ce8ce48c0931ea5fde537afd3c0f208ce9f0"
+  },
+  {
+    "file": "03_Characters_And_Animations/047_a_clean_cute_high_quality_2d_game_asset_sprite_s.png",
+    "source": "a_clean_cute_high_quality_2d_game_asset_sprite_s.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "46810e8cbdf1b0006174cf99e203555d5518025c6d34ad99df9a0bed5ad57bae"
+  },
+  {
+    "file": "03_Characters_And_Animations/048_a_clean_flat_cute_game_style_sprite_sheet_animat.png",
+    "source": "a_clean_flat_cute_game_style_sprite_sheet_animat.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "6dc5b48da4370172e7f7f8be74f33e26100b52f569e9a16557d31f087f81a203"
+  },
+  {
+    "file": "03_Characters_And_Animations/049_a_clean_cartoon_chibi_style_ui_sprite_sheet_layou.png",
+    "source": "a_clean_cartoon_chibi_style_ui_sprite_sheet_layou.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "a63964b7987dad160a1baf20d92ce9187c20fea72dd4162b535fc56839671af3"
+  },
+  {
+    "file": "03_Characters_And_Animations/050_a_clean_high_resolution_flat_clean_cartoon_sprit.png",
+    "source": "a_clean_high_resolution_flat_clean_cartoon_sprit.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "ed9ef544d0a86b086e1d091e151a2bb7cf9d2bd50fa9ae39948b31f9d7b6d1e0"
+  },
+  {
+    "file": "03_Characters_And_Animations/051_a_clean_flat_cartoon_illustration_sprite_sheet_o.png",
+    "source": "a_clean_flat_cartoon_illustration_sprite_sheet_o.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "73667dd9f4a2eb32922d9790f9a1197a88be8c20b9669c81bbfcc64821ee411d"
+  },
+  {
+    "file": "03_Characters_And_Animations/052_a_clean_flat_cartoon_style_spritesheet_character.png",
+    "source": "a_clean_flat_cartoon_style_spritesheet_character.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "6fcddff851591c36791c0e5b85af14569fd95968685a4a5c6e3527b1b4fea036"
+  },
+  {
+    "file": "03_Characters_And_Animations/053_a_bright_clean_isometric_cartoon_style_illustrat.png",
+    "source": "a_bright_clean_isometric_cartoon_style_illustrat.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "dfbb303dfd3e15d072680389f0f6cf1cfa3f3b6b6767b72a158a2d03949565bf"
+  },
+  {
+    "file": "03_Characters_And_Animations/054_a_clean_high_resolution_flat_cartoon_sprite_sheet.png",
+    "source": "a_clean_high_resolution_flat_cartoon_sprite_sheet.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "c710cae9bf7c543860eaa81f4e28ba1da011eba3887cf0eb1cd8b7e746852f10"
+  },
+  {
+    "file": "03_Characters_And_Animations/055_wide_clean_infographic_style_game_asset_sheet_in.png",
+    "source": "wide_clean_infographic_style_game_asset_sheet_in.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "6aa11a78fc61848a193d99999e0b10f3ed6811239ab67d3b9cfd6cbc1717e4ab"
+  },
+  {
+    "file": "03_Characters_And_Animations/056_a_clean_polished_isometric_cartoon_game_asset_she.png",
+    "source": "a_clean_polished_isometric_cartoon_game_asset_she.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "91d9e1ae20cf21e67e961a9428b7b3f18c7086dbe722bfaf23bf755bc2eac684"
+  },
+  {
+    "file": "03_Characters_And_Animations/057_a_bright_colorful_isometric_cartoon_2d_mobile_ga.png",
+    "source": "a_bright_colorful_isometric_cartoon_2d_mobile_ga.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "5d3a7f29b230a976f46911525672bc81cfe4382859271c8ad3e978e0ef0cf407"
+  },
+  {
+    "file": "03_Characters_And_Animations/058_wide_clean_game_art_sprite_sheet_on_a_white_backg.png",
+    "source": "wide_clean_game_art_sprite_sheet_on_a_white_backg.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "b64fd30c789e277a585ee71a38710c712468f49262ba118e3eed28e4e679a0a4"
+  },
+  {
+    "file": "03_Characters_And_Animations/059_a_clean_flat_game_art_style_sprite_reference_she.png",
+    "source": "a_clean_flat_game_art_style_sprite_reference_she.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "54bba34fa36efe8d3afd248f0954e0efe20383b5393ec1da0b0a2d57df09330c"
+  },
+  {
+    "file": "03_Characters_And_Animations/060_a_clean_colorful_infographic_game_art_asset_sheet.png",
+    "source": "a_clean_colorful_infographic_game_art_asset_sheet.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "5b5ede5161eedd47e78543e316feed583248d7a83f00270aaf523797b1bf1ef9"
+  },
+  {
+    "file": "03_Characters_And_Animations/061_wide_colorful_isometric_cute_cartoon_illustration.png",
+    "source": "wide_colorful_isometric_cute_cartoon_illustration.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "af461278f0d5f6c3f5e7c6740c379d056ab01acc10219f3631d572cc62c53582"
+  },
+  {
+    "file": "03_Characters_And_Animations/062_a_clean_flat_illustrated_character_sheet_sprit.png",
+    "source": "a_clean_flat_illustrated_character_sheet_sprit.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "3f5805465b592b28a2a48322b3a5eaf953ff09568541ebbae2b35d77af8316ea"
+  },
+  {
+    "file": "03_Characters_And_Animations/063_a_bright_colorful_2d_cartoon_illustration_game.png",
+    "source": "a_bright_colorful_2d_cartoon_illustration_game.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "810d5ec5f6ec10bb52380b1c9d42740bcb66dfd0f08a8789332185f9c01931e5"
+  },
+  {
+    "file": "03_Characters_And_Animations/064_a_clean_character_sheet_illustration_on_a_white_ba.png",
+    "source": "a_clean_character_sheet_illustration_on_a_white_ba.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "364f07e6bdfe46e49dd503ae7e7ee744748465585974108017a458d846fe9068"
+  },
+  {
+    "file": "03_Characters_And_Animations/065_a_bright_cute_isometric_mobile_game_ui_scene_of.png",
+    "source": "a_bright_cute_isometric_mobile_game_ui_scene_of.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "868ed5a909c7c46d2e921c578469818b5bd1f2d569585d53df192553548f31e6"
+  },
+  {
+    "file": "03_Characters_And_Animations/066_wide_horizontal_sprite_sheet_style_illustration_c.png",
+    "source": "wide_horizontal_sprite_sheet_style_illustration_c.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "1e93b9745241d4a28b08744de03fa38e3558c01c4c08e8a54166594c22323749"
+  },
+  {
+    "file": "03_Characters_And_Animations/067_a_clean_flat_cute_cartoon_sprite_sheet_style_ill.png",
+    "source": "a_clean_flat_cute_cartoon_sprite_sheet_style_ill.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "59248f5db15f4b1ec5aefe78487cd5977d8946b9855dc29a4b10dc4c5cbaa1ae"
+  },
+  {
+    "file": "04_Products_And_Props/068_wide_isometric_infographic_game_concept_art_of_a_c.png",
+    "source": "wide_isometric_infographic_game_concept_art_of_a_c.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "9c3f9fa6e43292f464bc0af5b4ebdbaf26673916f849a41faa7a887e7e186cff"
+  },
+  {
+    "file": "04_Products_And_Props/069_a_clean_polished_isometric_3d_cute_game_asset_she.png",
+    "source": "a_clean_polished_isometric_3d_cute_game_asset_she.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "779226da95cf011c504a58241464bf2f62a60694c490391b0db547b16fd7da4e"
+  },
+  {
+    "file": "04_Products_And_Props/070_a_colorful_isometric_cute_cartoon_game_ui_scene_of.png",
+    "source": "a_colorful_isometric_cute_cartoon_game_ui_scene_of.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "045a925947681aa23077b92a9d3cf18f0eedcf8647524a390e62e4c0f9417d4b"
+  },
+  {
+    "file": "04_Products_And_Props/071_a_clean_colorful_game_asset_style_illustration_sh.png",
+    "source": "a_clean_colorful_game_asset_style_illustration_sh.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "ec517a2f403460b831001c9c06e7e7f908dfe2620ce25bcc6c270da65adc024b"
+  },
+  {
+    "file": "04_Products_And_Props/072_a_clean_sprite_sheet_style_illustration_diagram_on.png",
+    "source": "a_clean_sprite_sheet_style_illustration_diagram_on.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "9724dd5c513d4d46d1f2c65cd6d2ef4660692a8ca499aaad2779f3d12d97b757"
+  },
+  {
+    "file": "04_Products_And_Props/073_a_clean_high_resolution_isometric_cartoon_vector.png",
+    "source": "a_clean_high_resolution_isometric_cartoon_vector.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "d4dc228fe607a7ca733ccf611322d8df6a757fcdfa6e24bd111e42d5be64a782"
+  },
+  {
+    "file": "04_Products_And_Props/074_a_clean_flat_sprite_sheet_style_infographic_asset.png",
+    "source": "a_clean_flat_sprite_sheet_style_infographic_asset.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "314b521d5fb3eb1f43d286dce6c1716c2460c71abd88268d11a824dc96015d57"
+  },
+  {
+    "file": "04_Products_And_Props/075_a_bright_colorful_cute_isometric_cell_shaded_2d.png",
+    "source": "a_bright_colorful_cute_isometric_cell_shaded_2d.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "6ea57c52e65489f34f49e9c0d162a1ea335342d88a5761b314086cf0250b156d"
+  },
+  {
+    "file": "04_Products_And_Props/076_a_wide_high_resolution_game_design_asset_sheet_a.png",
+    "source": "a_wide_high_resolution_game_design_asset_sheet_a.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "662da8e108468dee56cd0ea013bca485a7ff96e07fcfa53cc842a17dd899faca"
+  },
+  {
+    "file": "04_Products_And_Props/077_a_clean_high_resolution_game_art_style_infograph.png",
+    "source": "a_clean_high_resolution_game_art_style_infograph.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "c0980e3b3794221476e0d739f05ad1906e6543215d34ec0f72a9241695aa6737"
+  },
+  {
+    "file": "04_Products_And_Props/078_isometric_clean_cel_shaded_cartoon_game_art_styl.png",
+    "source": "isometric_clean_cel_shaded_cartoon_game_art_styl.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "d48d699d4253dff45269b10b848cc28120a09bb87c5f645c01552836d43106c9"
+  },
+  {
+    "file": "04_Products_And_Props/079_a_clean_flat_cute_cartoon_game_art_character_she.png",
+    "source": "a_clean_flat_cute_cartoon_game_art_character_she.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "71ddbd8efe18465cdb1373d85e5bba785e294ae66a46cf005dabfb0168f8ee1e"
+  },
+  {
+    "file": "04_Products_And_Props/080_a_clean_high_resolution_sprite_sheet_style_illust.png",
+    "source": "a_clean_high_resolution_sprite_sheet_style_illust.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "be685ba072e889dcef631f98414226b6b8423f53a3a4827b5c5e9afe22227a30"
+  },
+  {
+    "file": "04_Products_And_Props/081_a_clean_colorful_game_asset_style_illustration_s.png",
+    "source": "a_clean_colorful_game_asset_style_illustration_s.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "1fd71b64551c75de3e62f5b4c975789e1766da4680c95a216c265aae3368f80d"
+  },
+  {
+    "file": "04_Products_And_Props/082_a_clean_flat_cartoon_illustration_sprite_sheet_l.png",
+    "source": "a_clean_flat_cartoon_illustration_sprite_sheet_l.png",
+    "status": "REFERENCE_ASSET_REVIEW_REQUIRED",
+    "sha256": "f3a2061735606c7dcbd0c91f95f1bb1a1f77f4832dcf73b98d2a5997aeaaf477"
+  },
+  {
+    "file": "00_User_Reference_Images/IMG_2167.png",
+    "source": "IMG_2167.png",
+    "status": "USER_REFERENCE"
+  },
+  {
+    "file": "00_User_Reference_Images/IMG_2214.jpeg",
+    "source": "IMG_2214.jpeg",
+    "status": "USER_REFERENCE"
+  }
+]

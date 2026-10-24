@@ -1,0 +1,1 @@
+Meow Fastfood handoff. REFERENCE_ASSET_REVIEW_REQUIRED means not independently verified as final approved individual sprite. Rejected maps are isolated under 99_Rejected_Layouts_Do_Not_Integrate. Do not integrate those. Original approved P1 must be confirmed before Claude positions objects.
