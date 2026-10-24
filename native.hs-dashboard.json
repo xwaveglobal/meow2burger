@@ -1,0 +1,116 @@
+{
+  "iaa_config": {
+    "placements": [
+      {
+        "label": "Double Task Bonus",
+        "ads": [
+          {
+            "id": "ad7698650261963769908"
+          }
+        ]
+      },
+      {
+        "label": "Buying Pad",
+        "ads": [
+          {
+            "id": "ad7698648406076475444"
+          }
+        ]
+      },
+      {
+        "label": "Meow Rush",
+        "ads": [
+          {
+            "id": "ad7698648496551708673"
+          }
+        ]
+      },
+      {
+        "label": "VIP tip",
+        "ads": [
+          {
+            "id": "ad7698648227344435206"
+          }
+        ]
+      },
+      {
+        "label": "Coin Purchase",
+        "ads": [
+          {
+            "id": "ad7699590729877850164"
+          }
+        ]
+      },
+      {
+        "label": "Grand Opening",
+        "ads": [
+          {
+            "id": "ad7698648532581615617"
+          }
+        ]
+      },
+      {
+        "label": "Grill Break",
+        "ads": [
+          {
+            "id": "ad7698649833197340724"
+          }
+        ]
+      }
+    ],
+    "rewards": {
+      "Double Task Bonus": {
+        "task_bonus": 1
+      },
+      "Buying Pad": {
+        "coin_bag": 1
+      },
+      "Meow Rush": {
+        "meow_rush": 1
+      },
+      "VIP tip": {
+        "vip_bonus": 1
+      },
+      "Coin Purchase": {
+        "coins": 100
+      },
+      "Grand Opening": {
+        "coins": 200
+      },
+      "share": {
+        "coins": 50,
+        "$limit": "daily"
+      },
+      "tiktok_shortcut": {
+        "coins": 100
+      },
+      "tiktok_profile": {
+        "coins": 100,
+        "$limit": "daily"
+      }
+    },
+    "items": {
+      "coins": {
+        "category": "currency",
+        "name": "Coins"
+      },
+      "meow_rush": {
+        "category": "boost",
+        "name": "Meow Rush"
+      },
+      "task_bonus": {
+        "category": "bonus",
+        "name": "Task bonus"
+      },
+      "vip_bonus": {
+        "category": "bonus",
+        "name": "VIP tip"
+      },
+      "coin_bag": {
+        "category": "bonus",
+        "name": "Coin bag"
+      }
+    }
+  },
+  "products": []
+}
