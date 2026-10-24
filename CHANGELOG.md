@@ -2,6 +2,12 @@
 
 Engine history before Meow Burger (Meow Pizza v4.x) is in `docs/pizza-legacy/CHANGELOG_pizza.md`.
 
+## Unreleased — HedgeBurger character reskin
+- Every character (player, cashier, food/kitchen runner, cleaner, manager, customers 1–4, VIP 1–2) uses the hedgehog art from `HedgeBurger_character_assets_v1.zip`. Gameplay, timings, map, UI and save data unchanged.
+- `src/16_more_sprites.js` is now built by `tools/build_hedgehog.py` from the pack: same set keys, frame names and canvas sizes; foot pivots from the pack manifest; scales keep each character's apparent height.
+- The 72 female-player frames are registered as the set `player_female` (not used by any entity; the player stays male).
+- Renderer: carry art has empty hands, so the tray is drawn under the carried food; the player's front/back walk and carry-walk use the drawn frames; idle direction substitutes made for the old cat cuts are gone.
+
 ## v1.6.4 — TikTok native release
 - The 3 TikTok gift buttons (Revisit, Share, Launch/Home) show on the play screen from the first frame after loading, on web and native.
 - Auto play turned off (`CFG.autoPlay:false`): AUTO button hidden, a saved auto setting is ignored. Set it to `true` to bring it back.
