@@ -1,10 +1,13 @@
-"""Builds src/16_more_sprites.js from the HedgeBurger character pack (HedgeBurger_character_assets_v1.zip).
+"""Builds src/16_more_sprites.js from the HedgeBurger character pack.
 
 usage: python3 tools/build_hedgehog.py <path to the extracted HedgeBurger_assets_v1 folder>
+       (pack v1.1 = HedgeBurger_character_assets_v1_1.zip, or v1 with HedgeBurger_update_v1.1.zip copied over it)
 
 Character reskin only: every role keeps its existing MORE_SPRITES key, frame names and canvas sizes; only the
 pictures and the anchor data that depend on the pictures change. The 72 female-player frames are registered as
 the extra set `player_female` (no entity uses it; the player stays `chef`).
+v1.1 adds walk1–4_90 (drawn screen-left walk) for the 10 non-player roles and sit_eat_left1–4 (front-left seated,
+for the T-side chair) for the 6 customers / VIPs; both are drawn as supplied, never mirrored.
 
 Per frame:
   src     the runtime PNG from the role folder (WebP, lossless alpha), never previews / source sheets / designs
@@ -15,7 +18,8 @@ Per frame:
           runtime height, relative to its group). idle / sit / tablet groups: one group scale so the group's median
           drawn height equals the cat art it replaces (same apparent world height). walk / carry-walk: the atlas
           evens out the 4 frames of a direction, and each direction's head is matched to the idle of the same
-          direction (the atlas rows of different directions are not drawn at one size).
+          direction (the atlas rows of different directions are not drawn at one size). sit_eat_left: the same
+          drawn height as the seated art of the other chair (sit for customer 1, sit_eat_seat for the others).
   legY    int(h*.84), as before (leg strip for stepping on idle art, seated leg fold)
   tray    carry frames only: where the hands are, so the game's separate tray + food stack sits in the empty
           hands. One hand position per direction (median over the 4 frames, in world units) -> no stack jitter.
@@ -36,10 +40,15 @@ ROLES = {'chef': '01_player_chef', 'cashier': '02_cashier', 'waiter': '03_runner
 # folder -> normalized atlases holding its frames (only used for the per-frame scale correction)
 ATLASES = {'01_player_chef': ['male_idle', 'male_walk', 'male_carry'],
            '13_player_female': ['female_idle', 'female_walk', 'female_carry'],
-           '02_cashier': ['cashier'], '03_runner_food_and_kitchen': ['runner'], '04_cleaner': ['cleaner'],
-           '05_manager': ['manager'], '06_customer_1': ['customer_1'], '07_customer_2': ['customer_2'],
-           '08_customer_3': ['customer_3'], '09_customer_4_purple_dress': ['customer_4'],
-           '10_vip_1': ['vip_1'], '11_vip_2': ['vip_2']}
+           '02_cashier': ['cashier', 'cashier_left_patch'], '03_runner_food_and_kitchen': ['runner', 'runner_left_patch'],
+           '04_cleaner': ['cleaner', 'cleaner_left_patch'], '05_manager': ['manager', 'manager_left_patch'],
+           '06_customer_1': ['customer_1', 'customer_1_left_patch'], '07_customer_2': ['customer_2', 'customer_2_left_patch'],
+           '08_customer_3': ['customer_3', 'customer_3_left_patch'],
+           '09_customer_4_purple_dress': ['customer_4', 'customer_4_left_patch'],
+           '10_vip_1': ['vip_1', 'vip_1_left_patch'], '11_vip_2': ['vip_2', 'vip_2_left_patch']}
+# the seated group drawn on the other (L-side) chair; sit_eat_left is matched to its height
+SEAT_GROUP = {'cat01': 'sit', 'cat02': 'sit_eat_seat', 'cat03': 'sit_eat_seat', 'cat04': 'sit_eat_seat',
+              'vip01': 'sit_eat_seat', 'vip02': 'sit_eat_seat'}
 DIRS = [0, 315, 270, 225, 180, 135, 90, 45]   # pack order: front, front-right, right, back-right, back, back-left, left, front-left
 # Values of the cat art this pack replaces (Meow Burger v1.6.4 src/16_more_sprites.js), per set and pose group:
 # [scale s, median drawn height = alpha height * s]. Kept so the hedgehogs stand exactly as tall as the cats did.
@@ -57,7 +66,7 @@ CAT = {'chef': {'idle': [0.7697, 172.4], 'walk': [1.0229, 167.2], 'cwalk': [0.98
 
 
 def group(name):
-    for g in ('cwalk', 'walk', 'idle', 'sit_eat_seat', 'sit', 'eat', 'tablet'):
+    for g in ('cwalk', 'walk', 'idle', 'sit_eat_left', 'sit_eat_seat', 'sit', 'eat', 'tablet'):
         if name.startswith(g): return g
     raise ValueError(name)
 
@@ -106,6 +115,8 @@ def hands(a):
 def main(PACK):
     man = {f['path']: f for f in json.load(open(os.path.join(PACK, 'manifest.json')))['runtime_frames']}
     inv = {f['path']: f for f in json.load(open(os.path.join(PACK, 'source_inventory.json')))}
+    pm = os.path.join(PACK, 'patch_manifest_v1.1.json')
+    patch = {f['path']: f for f in json.load(open(pm))['runtime_frames']} if os.path.exists(pm) else {}
     report = {'frames': 0, 'errors': [], 'scale_fix': {}}
     # atlas cells: drawn height of each frame at the shared normalized scale
     atlas_h = {}
@@ -125,7 +136,11 @@ def main(PACK):
             mf = man.get(rel)
             if not mf: report['errors'].append(rel + ' missing from manifest'); continue
             if list(im.size) != mf['size']: report['errors'].append('%s size %s != manifest %s' % (rel, im.size, mf['size']))
-            if not folder.startswith('13_') and (rel not in inv or list(im.size) != inv[rel]['size']):
+            if rel in patch:   # v1.1 frame: same canvas as the reference frame the patch names
+                ref = patch[rel].get('reference_canvas')
+                if not ref or list(Image.open(os.path.join(PACK, ref)).size) != list(im.size):
+                    report['errors'].append('%s size %s != reference_canvas %s' % (rel, im.size, ref))
+            elif not folder.startswith('13_') and (rel not in inv or list(im.size) != inv[rel]['size']):
                 report['errors'].append(rel + ' does not match source_inventory')
             a = np.array(im); IMG[(key, name)] = a
             w, h = im.size; px, py = mf['pivot_px']
@@ -147,7 +162,7 @@ def main(PACK):
                 s_g = OUT['chef'][next(n for n in OUT['chef'] if group(n) == g)]['s_g']
             else:
                 drawn = float(np.median([alpha_h(IMG[(key, n)]) * corr[n] for n in names]))
-                s_g = CAT[key][g][1] / drawn
+                s_g = CAT[key][SEAT_GROUP[key] if g == 'sit_eat_left' else g][1] / drawn
             for n in names:
                 OUT[key][n]['s'] = round(s_g * corr[n], 4); OUT[key][n]['s_g'] = s_g
         # walk / carry-walk: the atlas rows of different directions are not drawn at one size, so the atlas only
@@ -162,6 +177,12 @@ def main(PACK):
                 corr = {n: ratio[n] / ref for n in names}
                 mi = OUT[key]['idle_%d' % d]
                 k = headw(IMG[(key, 'idle_%d' % d)]) * mi['s'] / float(np.median([headw(IMG[(key, n)]) * corr[n] for n in names]))
+                if d == 90 and all(ROLES[key] + '/' + n + '.png' in patch for n in names):
+                    # v1.1 left walk of a role whose right walk (270) already exists: the same pose facing the
+                    # other way, so it is sized to the right walk's drawn height (no size jump when turning)
+                    right = [n.replace('_90', '_270') for n in names]
+                    h_r = float(np.median([alpha_h(IMG[(key, n)]) * OUT[key][n]['s'] for n in right]))
+                    k = h_r / float(np.median([alpha_h(IMG[(key, n)]) * corr[n] for n in names]))
                 for n in names: OUT[key][n]['s'] = round(k * corr[n], 4)
         for n, m in fr.items():
             f = m['s'] / m['s_g']

@@ -96,7 +96,7 @@ module.exports = {
 '''%(APPID,HSKEY))
 # ---- 4. configs
 json.dump({"deviceOrientation":"portrait","subpackages":[{"name":"art","root":"art/"}]},open(os.path.join(OUT,'game.json'),'w'),indent=2)
-json.dump({"appid":APPID,"projectname":"Meow Burger","description":"Meow Burger","compileType":"game",
+json.dump({"appid":APPID,"projectname":"HedgeBurger","description":"HedgeBurger","compileType":"game",
            "setting":{"urlCheck":False,"es6":True,"postcss":True,"minified":True}},open(os.path.join(OUT,'project.config.json'),'w'),indent=2)
 # ---- 4b. HS dashboard JSON, NEXT TO the package (never uploaded): paste its iaa_config in HS → Ads Config → Edit raw JSON
 GAME_LABELS=re.findall(r"label:'([^']+)'",open(os.path.join(SRC,'05_platform.js')).read().split('const AD_PLACEMENTS=')[1].split('};')[0])

@@ -2,7 +2,14 @@
 
 Engine history before Meow Burger (Meow Pizza v4.x) is in `docs/pizza-legacy/CHANGELOG_pizza.md`.
 
-## Unreleased — HedgeBurger character reskin
+## Unreleased — HedgeBurger v1.1 asset update
+- Left walk: the 10 non-player roles walk to screen-left with their own drawn frames (`walk1–4_90`), no mirroring; sized to their right walk.
+- T-side chair: the 6 customers / VIPs sit there with the drawn front-left set (`sit_eat_left1` waiting, 1–4 while eating), no mirroring. L-side chair unchanged.
+- Branding: display name HedgeBurger (page title, popups, share title, stage/spot names, project.config.json projectname); drink shown as Hedge Cola (item id `drink` unchanged). Save key, ad labels and file names unchanged.
+- Brand art from the pack: loading art, app icons, loading-bar thumb, Launch Reward button, Home / Revisit / Share popup art; trash bin, fridge, 3 storage shelves, pickup counter, cola cup, burger box and ingredient crate with hedgehog logos (`tools/apply_brand_v11.py`).
+- Code-drawn marks: hedgehog emblem (`branding/hedgehog_mark.png`, embedded as `ENV_ART.hedgemark`) on the staff door and the PICK UP sign; queue-slot floor marks are a white hedgehog stamp instead of paw prints (same place, size and opacity).
+
+## HedgeBurger character reskin
 - Every character (player, cashier, food/kitchen runner, cleaner, manager, customers 1–4, VIP 1–2) uses the hedgehog art from `HedgeBurger_character_assets_v1.zip`. Gameplay, timings, map, UI and save data unchanged.
 - `src/16_more_sprites.js` is now built by `tools/build_hedgehog.py` from the pack: same set keys, frame names and canvas sizes; foot pivots from the pack manifest; scales keep each character's apparent height.
 - The 72 female-player frames are registered as the set `player_female` (not used by any entity; the player stays male).

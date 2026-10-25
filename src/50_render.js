@@ -58,13 +58,9 @@ function drawStaff(e,name,anim){
         otherwise the body stays still and only the leg strip steps) ---- */
 const SHEET_H={chef:1.06,player_female:1.06,cashier:1.0,waiter:1.0,cleaner:1.0,cat01:.95,cat02:.95,cat03:.95,cat04:.95,vip01:1.0,vip02:1.0,manager:1.0};
 /* HedgeBurger art: the player (and the registered female variant) has a full 8-direction idle, walk and carry-walk set;
-   the other roles have 8-direction idles and one drawn walk (screen-right, mirrored for screen-left) and step their
-   legs on the idle art for the other directions. Every idle direction is drawn, so no idle is substituted. */
-const SIDE_WALK={walk:{90:[270,1]}};
-const SHEET_REMAP={
-  cashier:SIDE_WALK, waiter:SIDE_WALK, cleaner:SIDE_WALK, cat01:SIDE_WALK, cat02:SIDE_WALK, cat03:SIDE_WALK, cat04:SIDE_WALK,
-  vip01:SIDE_WALK, vip02:SIDE_WALK, manager:SIDE_WALK,
-};
+   the other roles have 8-direction idles and drawn walks to screen-right (270) and screen-left (90, v1.1 art), and step
+   their legs on the idle art for the other directions. Every view is drawn, so nothing is substituted or mirrored. */
+const SHEET_REMAP={};
 /* number of drawn walk frames per set/direction (the new sheets have 5–8) */
 const WALK_N={}; function walkN(name,d){ const key=name+d; if(WALK_N[key]===undefined){ let n=0; while(MORE_SPRITES[name]['walk'+(n+1)+'_'+d]) n++; WALK_N[key]=n; } return WALK_N[key]; }
 const SHEET_HAND={0:[.5,.66],45:[.36,.66],90:[.26,.66],135:[.5,.62],180:[.5,.62],225:[.5,.62],270:[.74,.66],315:[.64,.66]};
@@ -135,6 +131,13 @@ function charAnim(e,isCustomer){
   if(e.role&&(e.asleep||e.idleT>CFG.sleepAfter)) return 'sleep';
   return 'idle';}
 
+/* queue-slot floor mark: the HedgeBurger emblem (ENV.hedgemark) as a white stamp, its dark outlines left open so the
+   face reads at paw-print size; drawn where, how big and how faint the old white paw prints were */
+let HEDGE_STAMP=null;
+function hedgeStamp(){ if(HEDGE_STAMP) return HEDGE_STAMP; const mk=ENV.hedgemark; if(!mk||!mk.img) return null;
+  const n=128, cv=newCanvas(n,n), g=cv.getContext('2d'); g.drawImage(mk.img,0,0,n,n); const d=g.getImageData(0,0,n,n), p=d.data;
+  for(let i=0;i<p.length;i+=4){ if((p[i]+p[i+1]+p[i+2])/3<110) p[i+3]=0; p[i]=p[i+1]=p[i+2]=255; }
+  g.putImageData(d,0,0); return HEDGE_STAMP=cv; }
 function render(){
   ctx.setTransform(DPR,0,0,DPR,0,0);
   const pz=elevAt(player.x,player.y);
@@ -147,7 +150,8 @@ function render(){
   for(const t of tables) if(t.kind==='vip'){ const [vx,vy]=P(t.x+t.w/2,t.y+t.d/2); ell(MD,vx,vy,TW*1.35,TW*.67,'#d8343a',INK,MD.OL*.8); ell(MD,vx,vy,TW*1.2,TW*.6,null,'#f4c04e',MD.OL*1.4); }
   for(const pd of PADS) if(pd.vis()) drawPad(pd);
   if(S.bought.register&&!S.bought.cashier) ring(PT.cashier,'rgba(255,255,255,.25)');
-  if(S.bought.register) for(let i=0;i<CFG.queueMax;i++){const [qx,qy]=P(...slotPos(i));ctx.save();ctx.globalAlpha=.35;ctx.translate(qx,qy);ctx.scale(1,.5);pawPrint(MD,0,0,TW*.13,'#fff');ctx.restore()}
+  if(S.bought.register){ const st=hedgeStamp(), r=TW*.13; for(let i=0;i<CFG.queueMax;i++){const [qx,qy]=P(...slotPos(i));ctx.save();ctx.globalAlpha=.35;ctx.translate(qx,qy);ctx.scale(1,.5);
+    if(st) ctx.drawImage(st,-r*.68,-r*.72,r*1.36,r*1.36); else pawPrint(MD,0,0,r,'#fff'); ctx.restore()} }
   /* depth-sorted world */
   const L=[], add=(d,f)=>L.push([d,f]);
   const CK=e=>charKey(e.x,e.y);
@@ -241,11 +245,13 @@ function tableTop(cx,cy,hd,vip){ const D=MD, hw=TB.hw;
   const f=.7+.3*Math.sin(now*9+cx); ell(D,kx,ky-TW*.2,TW*.025*f,TW*.045*f,'#ffcf4a','#ff8a2a',D.OL*.5); }
 function drawSeated(c,sx0,sy0,side){ const set=MORE_SPRITES[c.skin]; if(!set) return; const t=(c.t||now)+(c.seed||0);
   /* the approved sitting sprite (holding the food), whole body, drawn behind the table so the table top hides the legs.
-     L chair (-x side) faces screen down-right as drawn; T chair (-y side) is the mirror. Same scale group as walking. */
-  const m=set.sit1||set.sit_eat_seat1||set.idle_315; if(!m||!m.img) return;
-  const T=side==='T', k=TW*(SHEET_H[c.skin]||1)/150*m.s*(c.kid?.86:1);
+     L chair (-x side) faces screen down-right as drawn. T chair (-y side) faces down-left: it uses the drawn front-left
+     set (sit_eat_left1 waiting, 1–4 looping at the tablet's 3 fps while eating); never mirrored. */
+  const T=side==='T', left=T&&!!set.sit_eat_left1;
+  const m=left?(c.state==='eat'?set['sit_eat_left'+(1+Math.floor(t*3)%4)]:set.sit_eat_left1):(set.sit1||set.sit_eat_seat1||set.idle_315); if(!m||!m.img) return;
+  const k=TW*(SHEET_H[c.skin]||1)/150*m.s*(c.kid?.86:1);
   const [hx,hy]=P(sx0+(T?0:.22),sy0+(T?.22:0),TB.seat-.02), mad=c.state==='vipWait'&&c.patience<c.pMax*CFG.patience.impatientAt;
-  ctx.save(); ctx.translate(hx+(mad?Math.sin(t*38)*TW*.01:0),hy); ctx.scale(k*(T?-1:1),k);
+  ctx.save(); ctx.translate(hx+(mad?Math.sin(t*38)*TW*.01:0),hy); ctx.scale(k*(T&&!left?-1:1),k);
   ctx.drawImage(m.img,-m.ax,-m.ay,m.w,m.h); ctx.restore(); }
 function drawCustomer(c){const anim=charAnim(c,true);
   if(seatedAt(c)&&c.table) return;   // drawn with its table (see drawTableAndSeats)
@@ -352,7 +358,7 @@ function drawCounterSeg(y0,len,first,last){ const c=COUNTER, H=CTRC.h, x0=c.x, x
       const u0=y1-s1, u1=y1-s0; g.fillStyle=CTRC.sign; g.strokeStyle=INK; g.lineWidth=.035; rr(g,u0,.04,u1-u0,.44,.06); g.fill(); g.stroke();
       g.fillStyle='#fff6ea'; g.font='700 30px Fredoka, sans-serif'; g.textAlign='center'; g.textBaseline='middle';
       g.save(); g.translate((u0+u1)/2+.12,.27); g.scale(.0105,.0105); g.fillText('PICK UP',0,0);
-      g.beginPath(); g.arc(-82,-2,13,0,7); g.fill(); g.beginPath(); g.moveTo(-94,-8); g.lineTo(-92,-22); g.lineTo(-84,-13); g.moveTo(-70,-8); g.lineTo(-72,-22); g.lineTo(-80,-13); g.fill(); g.restore();
+      { const mk=ENV.hedgemark; if(mk&&mk.img) g.drawImage(mk.img,-98,-23,34,34); } g.restore();   // HedgeBurger emblem where the cat head was
       g.restore(); }); }
   /* overhanging cream top slab */
   const o=.07, zt=H-.08, zb=H+.05;

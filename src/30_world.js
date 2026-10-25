@@ -89,11 +89,12 @@ function drawWalls(D,stage){const P=D.P,g=D.g,H=WALL_H,t=.3,T=D.T;
   /* right wall (y=0) */
   poly(D,[P(0,0,0),P(lenX,0,0),P(lenX,0,H),P(0,0,H)],ENVC.wall,null); brick('y',lenX);
   poly(D,[P(0,0,0),P(lenX,0,0),P(lenX,0,.22),P(0,0,.22)],ENVC.base,INK,D.OL*.6);
-  /* cat door between the storage shelf and the counter */
+  /* staff door between the storage shelf and the counter; HedgeBurger emblem (branding/hedgehog_mark.png) where the cat
+     head was, same place and size */
   onFace(D,'y',10.9,0,1.95,g2=>{g2.lineWidth=.05;g2.strokeStyle=INK;g2.fillStyle='#5a3a2c';g2.fillRect(0,0,.9,1.95);g2.strokeRect(0,0,.9,1.95);
-    g2.fillStyle='#3f2a22';g2.fillRect(.08,.08,.74,1.87);g2.fillStyle='#f3c48c';g2.beginPath();g2.ellipse(.45,.55,.17,.14,0,0,7);g2.fill();
-    g2.beginPath();g2.moveTo(.3,.48);g2.lineTo(.33,.33);g2.lineTo(.4,.44);g2.moveTo(.6,.48);g2.lineTo(.57,.33);g2.lineTo(.5,.44);g2.fill();
-    g2.fillStyle=INK;g2.beginPath();g2.arc(.4,.55,.022,0,7);g2.arc(.5,.55,.022,0,7);g2.fill();g2.fillStyle='#d9d3cc';g2.beginPath();g2.arc(.15,1.0,.04,0,7);g2.fill();});
+    g2.fillStyle='#3f2a22';g2.fillRect(.08,.08,.74,1.87);
+    const mk=ENV.hedgemark; if(mk&&mk.img) g2.drawImage(mk.img,.27,.33,.36,.36);
+    g2.fillStyle='#d9d3cc';g2.beginPath();g2.arc(.15,1.0,.04,0,7);g2.fill();});
   /* wooden caps */
   poly(D,[P(-t,-t,H),P(lenX,-t,H),P(lenX,0,H),P(0,0,H),P(0,lenY,H),P(-t,lenY,H)],ENVC.capTop,INK,D.OL*.8);
   poly(D,[P(0,0,H),P(lenX,0,H),P(lenX,0,H-.18),P(0,0,H-.18)],ENVC.cap,INK,D.OL*.7);

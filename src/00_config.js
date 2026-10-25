@@ -20,7 +20,7 @@ const CFG={
   boost:{dur:60, cd:120},   // kept for old saves; the ad scenario uses CFG.ads.rush
   xp:{base:6, perLevel:6},
   decorBonus:0.05,          // +5% to every sale per decoration bought
-  stageNames:['Chicken Corner','Meow Burger Diner','Bigger Restaurant','Patio & Grand Opening'],
+  stageNames:['Chicken Corner','HedgeBurger Diner','Bigger Restaurant','Patio & Grand Opening'],
   minis:{clientKey:''},
   /* Ad scenario v4.6 — Meow Pizza placements (labels match the Meow Sushi config). Times in seconds.
      Ads are shown through Ads.adapter (HS SDK goes there); without it a test ad is simulated. */
@@ -43,7 +43,7 @@ const round10=n=>Math.max(10,Math.round(n/10)*10);
 /* Food & carried items. price = coins per unit (before restaurant/decor bonuses). */
 const ITEMS={
   pizza:    {cat:'food', price:5,  name:'Fried Chicken', step:.2},
-  drink:    {cat:'food', price:4,  name:'Cat Cola',   step:.2},
+  drink:    {cat:'food', price:4,  name:'Hedge Cola',   step:.2},
   pepperoni:{cat:'food', price:9,  name:'Cheeseburger', step:.15},
   dessert:  {cat:'food', price:12, name:'Fries', step:.17},
   veggie:   {cat:'food', price:10, name:'Garden Salad', step:.11},
@@ -111,7 +111,7 @@ const SPOTS=[
  {id:'bin',     label:'Trash bin',     cost:5,   fp:[12.95,6.5,0.6,0.6],unlock:'t_bin',     kind:'bin'},
  {id:'table2',  label:'Table',         cost:60,  fp:[14.95,1.25,1.3,1.3],unlock:'t_table2',   kind:'table'},
  {id:'drink',   label:'Soda fountain', cost:90,  fp:[2.3,0,1.5,1.25],  unlock:'t_drink',    kind:'station', st:'drink', pt:[3.05,1.8]},
- {id:'renovate',label:'Meow Burger Diner', cost:300, fp:[13.6,9.9,1.1,0.8],unlock:'t_renovate', kind:'stage', stage:1},
+ {id:'renovate',label:'HedgeBurger Diner', cost:300, fp:[13.6,9.9,1.1,0.8],unlock:'t_renovate', kind:'stage', stage:1},
  {id:'pantry',  label:'Storage shelf', cost:150, fp:[0,3.75,0.6,1.1],  unlock:'t_pantry',kind:'station', st:'pantry', pt:[1.1,4.3]},
  {id:'prep',    label:'Burger station',cost:180, fp:[0,5.4,1.3,2.0],  unlock:'t_prep',    kind:'station', st:'prep', pt:[1.85,6.4]},
  {id:'office',  label:'Manager desk',  cost:600, fp:[17.35,12.9,0.8,0.65],unlock:'t_office',  kind:'office', zone:'hall2'},
@@ -156,11 +156,11 @@ const TASKS=[
  {id:'t_upgrade', text:'Upgrade the kitchen',kind:'custom',check:'anyKitchenUp',target:'padKitchen'},
  {id:'t_serve5',  text:'Serve 5 customers',kind:'count',stat:'served',n:5,reward:30},
  {id:'t_table2',  text:'Unlock a new table',kind:'buy',spot:'table2',reward:20},
- {id:'t_drink',   text:'New drink: Cat Cola',kind:'buy',spot:'drink',reward:30},
+ {id:'t_drink',   text:'New drink: Hedge Cola',kind:'buy',spot:'drink',reward:30},
  {id:'t_cook10',  text:'Fry 10 chicken buckets',kind:'count',stat:'cooked_pizza',n:10,reward:40},
  {id:'t_hire1',   text:'Hire a cashier cat',kind:'buy',spot:'cashier',reward:60},
  {id:'t_collect100',text:'Collect 100 coins',kind:'count',stat:'collected',n:100,reward:40},
- {id:'t_renovate',text:'Renovate into Meow Burger Diner',kind:'buy',spot:'renovate',reward:50},
+ {id:'t_renovate',text:'Renovate into HedgeBurger Diner',kind:'buy',spot:'renovate',reward:50},
  {id:'t_pantry',  text:'Build the storage shelf',kind:'buy',spot:'pantry',reward:40},
  {id:'t_prep',    text:'New recipe: Cheeseburger',kind:'buy',spot:'prep',reward:50},
  {id:'t_loadprep',text:'Bring patties to the burger station',kind:'count',stat:'loaded',n:3,reward:30,target:'pantry'},
