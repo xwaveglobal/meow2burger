@@ -1,8 +1,11 @@
-"""Applies the HedgeBurger v1.1 brand images (HedgeBurger_update_v1.1.zip / HedgeBurger_character_assets_v1_1.zip).
+"""Applies the Hedge Burger brand images (HedgeBurger_update_v1.1.zip / _v1_1 full pack / HedgeBurger_update_v1.2.zip).
 
-usage: python3 tools/apply_brand_v11.py <path to the extracted HedgeBurger_assets_v1 folder (v1.1)>
+usage: python3 tools/apply_brand_v11.py <path to the extracted HedgeBurger_assets_v1 folder (v1.1 or v1.2)>
 
-Replaces only the images the pack lists in patch_manifest_v1.1.json "ui_and_brand_assets", keeping every size:
+Reads patch_manifest_v1.2.json when present (it supersedes v1.1: corrected loading wordmark, logo, guide images and
+the revisit coin banner, whose v1.1 "cat-free" label was wrong), else patch_manifest_v1.1.json.
+Replaces only the images the manifest lists in "ui_and_brand_assets", keeping every size; each file must match the
+manifest's sha256 when it gives one:
   04_tiktok_ui/*      -> assets/minis/<same name>     (loading art, icons, popup art, buttons, loading-bar thumb)
   02_stations_props/* -> src/18_env_art.js ENV_ART     (pack file names are the original kit's; the game keys differ)
   03_food/*           -> src/17_pizza_art.js FOOD_ART
@@ -34,7 +37,8 @@ def load_obj(text, name):
 
 
 def main(PACK):
-    man = json.load(open(os.path.join(PACK, 'patch_manifest_v1.1.json')))
+    mp = next(os.path.join(PACK, n) for n in ('patch_manifest_v1.2.json', 'patch_manifest_v1.1.json') if os.path.exists(os.path.join(PACK, n)))
+    man = json.load(open(mp)); print('manifest', os.path.basename(mp))
     listed = {a['path']: a for a in man['ui_and_brand_assets']}
     log = []
     for p in list(ENV) + list(FOOD):
@@ -65,7 +69,7 @@ def main(PACK):
         if p.startswith('04_tiktok_ui/'):
             dst = os.path.join(ROOT, 'assets', 'minis', os.path.basename(p))
             assert Image.open(dst).size == Image.open(src).size, p
-            if a.get('sha256'):   # cat-free originals kept byte-for-byte by the pack
+            if a.get('sha256'):   # file must be exactly the one the manifest describes
                 assert hashlib.sha256(open(src, 'rb').read()).hexdigest() == a['sha256'], p
             same = open(src, 'rb').read() == open(dst, 'rb').read()
             if not same: shutil.copyfile(src, dst)

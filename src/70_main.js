@@ -89,11 +89,11 @@ async function boot(){
     UI.loading(.03,'Heating the grill…');
     if(document.fonts&&document.fonts.load){ try{await Promise.race([document.fonts.load('700 20px Fredoka'),new Promise(r=>setTimeout(r,1500))])}catch(_){} }
     UI.loading(.08,'Toasting the buns…');
-    await preloadAssets(p=>UI.loading(.08+p*.88,p<.5?'Toasting the buns…':p<.9?'Frying the chicken…':'Calling the cats…'));
+    await preloadAssets(p=>UI.loading(.08+p*.88,p<.5?'Toasting the buns…':p<.9?'Frying the chicken…':'Calling the Hedge crew…'));
     rebuildWorld(false); refreshSolids(); buildFloorCache(TW);
     if(S.stage===0&&S.bought.oven1) stations.forEach(s=>{if(s.type==='oven')s.stock=2});
     camX=(player.x-player.y)*TW/2;camY=(player.x+player.y)*TW/4;
-    UI.loading(1,'Ready! Meow!'); await new Promise(r=>setTimeout(r,350));
+    UI.loading(1,'Ready! Hedge!'); await new Promise(r=>setTimeout(r,350));
     $('loading').classList.add('gone'); setTimeout(()=>{$('loading').hidden=true},400);
     window.__cpStarted=true; last=null; requestAnimationFrame(frame);
     PF.initLifecycle(); UI.afterBoot&&UI.afterBoot();

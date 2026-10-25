@@ -1,4 +1,4 @@
-<title>HedgeBurger</title>
+<title>Hedge Burger</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap">
@@ -30,7 +30,7 @@ button{font:inherit;color:inherit}
 .pbar span{position:absolute;inset:0;display:grid;place-items:center;font-size:13px;color:var(--ink);text-decoration:none}
 #icPin{position:absolute;right:2px;top:-8px;width:22px;height:30px}
 .boost{pointer-events:auto;position:absolute;right:max(10px,env(safe-area-inset-right,0px));top:max(calc(56px + var(--sat)),calc(var(--capb) + 8px));width:78px;padding:5px 3px;border:2.5px solid var(--ink);border-radius:12px;background:linear-gradient(var(--cream) 0 46%,var(--blue) 46%);text-align:center;font-weight:700;box-shadow:0 3px 0 rgba(90,52,36,.3);cursor:pointer}
-.boost b{display:block;font-size:12px;letter-spacing:.04em}.boost em{display:block;font-style:normal;font-size:15px;color:#3f8f35;line-height:1.1}
+.boost b{display:block;font-size:12px;letter-spacing:.04em;white-space:nowrap}.boost b.long{font-size:9.5px;letter-spacing:0}.boost em{display:block;font-style:normal;font-size:15px;color:#3f8f35;line-height:1.1}
 .boost small{display:block;font-size:11px;color:#fff;text-shadow:0 1px 0 var(--ink);margin-top:14px}.boost.on{background:linear-gradient(var(--cream) 0 46%,var(--green) 46%)}
 .boost .ad{display:inline-block;width:26px;height:18px;margin-top:2px}
 .spacer{flex:1}
@@ -155,14 +155,14 @@ button:focus-visible,.boost:focus-visible{outline:3px solid #fff;outline-offset:
 </style>
 
 <div id="wrap">
-  <canvas id="game" aria-label="HedgeBurger restaurant"></canvas>
+  <canvas id="game" aria-label="Hedge Burger restaurant"></canvas>
   <div class="hud">
     <div class="top">
       <div class="pill" id="coinPill"><i id="icCoin"></i><span id="moneyTxt">0</span><button class="plus" id="plusBtn" aria-label="Shop">+</button></div>
       <div class="pill" id="starPill"><i id="icStar"></i><span id="lvlTxt">1</span></div>
       <button class="pill" id="progPill" aria-label="Open map"><div class="pbar"><u id="progFill"></u><span id="progTxt">0/10</span></div><i id="icPin"></i></button>
     </div>
-    <div class="boost" id="boostBtn" role="button" tabindex="0" hidden><b>MEOW RUSH</b><em>×2 SPEED</em><small id="boostSub">for 1 min</small></div>
+    <div class="boost" id="boostBtn" role="button" tabindex="0" hidden><b class="long">HEDGE BURGER</b><em>×2 SPEED</em><small id="boostSub">for 1 min</small></div>
         <button class="chip" id="bagChip" hidden><i></i><b>+0</b></button>
     <div id="side"><button class="sb" id="sbRevisit" hidden aria-label="Revisit gift"><img alt=""></button><button class="sb" id="sbShare" hidden aria-label="Share gift"><img alt=""></button><button class="sb" id="sbHome" hidden aria-label="Add to phone screen"><img alt=""></button></div>
     <div class="spacer"></div>
@@ -179,7 +179,7 @@ button:focus-visible,.boost:focus-visible{outline:3px solid #fff;outline-offset:
     <div id="banner"><b>Title</b><span></span></div>
   </div>
   <div id="modalRoot"></div>
-  <div id="loading"><div class="ld-bg"></div><img class="ld-art" alt="HedgeBurger" src="__ART_loading_bg__"><div class="ld-ui"><div class="ld-bar"><u></u><img alt="" src="__ART_paw_thumb__"></div><div id="loadTxt">Loading… 0%</div></div></div>
+  <div id="loading"><div class="ld-bg"></div><img class="ld-art" alt="Hedge Burger" src="__ART_loading_bg__"><div class="ld-ui"><div class="ld-bar"><u></u><img alt="" src="__ART_paw_thumb__"></div><div id="loadTxt">Loading… 0%</div></div></div>
   <div id="mockCap" hidden>… | ✕</div>
   <div id="errorBox" hidden><div><h2>The game could not start</h2><p></p><small>Try reloading the page. If it keeps happening, send this message to the developer.</small></div></div>
 </div>

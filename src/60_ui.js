@@ -67,14 +67,14 @@ const UI={
     UI.modal(`<h2>RESTAURANT MAP</h2><div class="stages">${cards}</div>`,'wide')},
   /* ---- shop ---- */
   openShop(){const on=isBoost(),cd=now<S.boostCd, cp=CFG.ads.coinPurchase, cpWait=Math.ceil(((UI._cd.coin_purchase||0)-Date.now())/1000);
-    UI.modal(`<h2>SHOP</h2><div class="ulist"><div class="urow"><i>${UI_ICON.speed}</i><div class="uinfo"><b>Meow Rush</b><small>Stations cook twice as fast and you walk 30% faster for 1 minute.</small></div><button class="buy" id="shopBoost" ${on||cd?'disabled':''}>${on?'ACTIVE':cd?Math.ceil(S.boostCd-now)+'s':UI_ICON.ad+' FREE'}</button></div>
+    UI.modal(`<h2>SHOP</h2><div class="ulist"><div class="urow"><i>${UI_ICON.speed}</i><div class="uinfo"><b>Hedge Burger</b><small>Stations cook twice as fast and you walk 30% faster for 1 minute.</small></div><button class="buy" id="shopBoost" ${on||cd?'disabled':''}>${on?'ACTIVE':cd?Math.ceil(S.boostCd-now)+'s':UI_ICON.ad+' FREE'}</button></div>
       <div class="urow"><i>${UI_ICON.coin}</i><div class="uinfo"><b>Bag of coins</b><small>A tip jar from happy customers.</small></div><button class="buy" id="shopCoins" ${cpWait>0?'disabled':''}>${cpWait>0?cpWait+'s':UI_ICON.ad+' +'+cp.reward}</button></div></div>
       <p class="note">Decorations, tables and new stations are bought directly in the restaurant by standing on their dashed spot.</p>`);
     const b=$('shopBoost'); if(b) b.onclick=()=>{UI.close();UI.startAd()};
     const g=$('shopCoins'); if(g) g.onclick=()=>{UI.close();UI.watchCoins()};},
   /* Meow Rush (rewarded) */
   startAd(){ if(isBoost()||now<S.boostCd||UI.modalOpen||Ads.busy) return;
-    Ads.rewarded('meow_rush',()=>{S.boostUntil=now+CFG.ads.rush.dur;S.boostCd=now+CFG.ads.rush.dur+CFG.ads.rush.cd;UI.toast('Meow Rush! 2× speed for 1 min');sfx('level')}); },
+    Ads.rewarded('meow_rush',()=>{S.boostUntil=now+CFG.ads.rush.dur;S.boostCd=now+CFG.ads.rush.dur+CFG.ads.rush.cd;UI.toast('Hedge Burger! 2× speed for 1 min');sfx('level')}); },
   /* Coin Purchase (rewarded): fixed coins per watch */
   watchCoins(after){ if(!UI.ready('coin_purchase')||Ads.busy) return; const c=CFG.ads.coinPurchase;
     Ads.rewarded('coin_purchase',()=>{UI._cd.coin_purchase=Date.now()+c.cd*1000;UI.grant(c.reward,'Coin purchase');after&&after()}); },
@@ -91,7 +91,7 @@ const UI={
     $('modalRoot').querySelectorAll('[data-x]').forEach(b=>b.onclick=()=>UI.testTool(b.dataset.x,b));
     $('sSound').onclick=()=>{S.sound=!S.sound;$('sSound').textContent='Sound: '+(S.sound?'ON':'OFF');save()};
     let armed=false;$('sReset').onclick=()=>{if(!armed){armed=true;$('sReset').textContent='Tap again to confirm';return}resetGame();UI.close();UI.toast('Fresh start!')}},
-  milestone(){UI.modal(`<div class="trophy">${UI_ICON.star}</div><h2>GRAND OPENING COMPLETE</h2><p class="big">HedgeBurger is now a Burger Palace!</p>
+  milestone(){UI.modal(`<div class="trophy">${UI_ICON.star}</div><h2>GRAND OPENING COMPLETE</h2><p class="big">Hedge Burger is now a Burger Palace!</p>
     <div class="mstats"><div><b>${fmtTime(S.playTime)}</b><small>play time</small></div><div><b>${S.stats.served}</b><small>customers served</small></div><div><b>${fmtNum(S.stats.collected)}</b><small>coins collected</small></div></div><p class="note">Keep playing: every upgrade and optional table stays available.</p>`,'wide')},
 };
 function fmtTime(s){s=Math.floor(s);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}

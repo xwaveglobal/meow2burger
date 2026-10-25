@@ -113,7 +113,7 @@ const UI={
   onTaskAdvance(){}, onStageUp(){ UI.offerOpening(); },
   startAd(){ if(isBoost()||now<S.boostCd||UI.modalOpen||Ads.busy) return;
     Ads.rewarded('meow_rush',()=>UI.startRush(),{}); },
-  startRush(){ S.boostUntil=now+CFG.ads.rush.dur;S.boostCd=now+CFG.ads.rush.dur+CFG.ads.rush.cd;UI.toast('Meow Rush! 2× speed for 1 min');sfx('level'); },
+  startRush(){ S.boostUntil=now+CFG.ads.rush.dur;S.boostCd=now+CFG.ads.rush.dur+CFG.ads.rush.cd;UI.toast('Hedge Burger! 2× speed for 1 min');sfx('level'); },
   watchCoins(after){ if(!UI.ready('coin_purchase')||Ads.busy) return; const c=CFG.ads.coinPurchase;
     const done=()=>{UI._cd.coin_purchase=Date.now()+c.cd*1000;after&&after()};
     Ads.rewarded('coin_purchase',()=>{UI.grant(c.reward,'Coin purchase');done()},{after:done}); },
@@ -145,7 +145,7 @@ const UI={
     const show=S.task>=taskIndex('t_serve5');
     if(show){ const bx=W-10-78, by=Math.max(T+48,I.capB+8), on=isBoost(), sub=on?Math.ceil(S.boostUntil-now)+'s left':now<S.boostCd?'ready in '+Math.ceil(S.boostCd-now)+'s':'for 1 min';
       const dy=pressed('rush')?2:0; box(bx,by+dy,78,66,12,C.cream,C.ink,2.5,dy?1:3); ctx.save(); rrp(ctx,bx,by+dy,78,66,12); ctx.clip(); ctx.fillStyle=on?C.green:C.blue; ctx.fillRect(bx,by+dy+30,78,40); ctx.restore(); rrp(ctx,bx,by+dy,78,66,12); ctx.lineWidth=2.5; ctx.strokeStyle=C.ink; ctx.stroke();
-      txt('MEOW RUSH',bx+39,by+dy+10,11,C.ink,'center'); txt('×2 SPEED',bx+39,by+dy+23,14,'#3f8f35','center'); txt(sub,bx+39,by+dy+50,11,'#fff','center',700,C.ink,3);
+      txt('HEDGE BURGER',bx+39,by+dy+10,Math.min(11,70/tw('HEDGE BURGER',1)),C.ink,'center'); txt('×2 SPEED',bx+39,by+dy+23,14,'#3f8f35','center'); txt(sub,bx+39,by+dy+50,11,'#fff','center',700,C.ink,3);
       hit(bx,by,78,66,()=>UI.startAd(),'rush'); }
     /* coin bag (Buying Pad) chip */
     let sideY=T+46;
@@ -226,7 +226,7 @@ const UI={
     gap(h){ return {h,gap:0,draw(){}}; },
   },
   m_shop(w){ const on=isBoost(),cd=now<S.boostCd, cp=CFG.ads.coinPurchase, wait=Math.ceil(((UI._cd.coin_purchase||0)-Date.now())/1000), B=UI.B;
-    const r=[B.row({w:w,icon:'speed',title:'Meow Rush',desc:'Stations cook twice as fast and you walk 30% faster for 1 minute.',btn:{label:on?'ACTIVE':cd?Math.ceil(S.boostCd-now)+'s':'FREE',icon:on||cd?null:'ad',disabled:on||cd,fn:()=>{UI.close();UI.startAd()},id:'sb1'}}),
+    const r=[B.row({w:w,icon:'speed',title:'Hedge Burger',desc:'Stations cook twice as fast and you walk 30% faster for 1 minute.',btn:{label:on?'ACTIVE':cd?Math.ceil(S.boostCd-now)+'s':'FREE',icon:on||cd?null:'ad',disabled:on||cd,fn:()=>{UI.close();UI.startAd()},id:'sb1'}}),
       B.row({w:w,icon:'coin',title:'Bag of coins',desc:'A tip jar from happy customers.',btn:{label:wait>0?wait+'s':'+'+cp.reward,icon:wait>0?null:'ad',disabled:wait>0,fn:()=>{UI.close();UI.watchCoins()},id:'sb2'}}),
       B.note('Decorations, tables and new stations are bought directly in the restaurant by standing on their dashed spot.',w)]; r.title='SHOP'; return r; },
   m_upgrade(w){ const tabs=UI.upTabs(), tab=UI._modal.arg, cur=tabs.find(t=>t[0]===tab), u=UPG[tab], B=UI.B, r=[B.tabs(tabs,tab,t=>UI.openUpgrade(t))];
@@ -258,7 +258,7 @@ const UI={
   testTool(x){ const m=PF.mock; if(x==='days'){S.mx.rvDay='';S.mx.shDay='';PF._mockRevisit=false;UI._rvCan=false;save();UI.toast('Daily gifts reset')}
     if(x==='home'){S.mx.home=0;S.mx.homeAsked=0;save();UI.toast('Add-to-Home reset')} if(x==='fail'){m.adFailNext=true;UI.toast('Next ad will fail')} if(x==='quit'){m.adQuitNext=true;UI.toast('Next ad will be closed early')} if(x==='money'){S.money+=500;save()} },
   m_milestone(w){ const r=[{h:84,draw(x,y,ww){ drawImg(icon('star'),x+ww/2-38,y,76,76); }}, {h:30,draw(x,y,ww){ box(x,y,ww,30,12,C.red,C.ink,2.5,0); txt('GRAND OPENING COMPLETE',x+ww/2,y+16,15,'#fff','center',700,C.ink,3); }},
-      UI.B.note('HedgeBurger is now a Burger Palace!',w),
+      UI.B.note('Hedge Burger is now a Burger Palace!',w),
       {h:52,draw(x,y,ww){ const s=[[fmtTime(S.playTime),'play time'],[String(S.stats.served),'customers served'],[fmtNum(S.stats.collected),'coins collected']], bw=(ww-12)/3; s.forEach((v,i)=>{ const bx=x+i*(bw+6); box(bx,y,bw,52,10,'#fff',C.ink,2,0); txt(v[0],bx+bw/2,y+19,18,C.ink,'center'); txt(v[1],bx+bw/2,y+39,10,C.brown2,'center',600); }); }},
       UI.B.note('Keep playing: every upgrade and optional table stays available.',w)]; r.title=''; return r; },
   /* --- popups (mockup style) --- */
@@ -273,21 +273,21 @@ const UI={
         txt(amt,x+ww/2,y+ww*ratio*.78,38,'#fff','center',700,'#6b3b22',7); }}; },
       note(s,w){ return {h:wrap(s,w,13).length*17, draw(x,y,ww){ para(s,x,y,ww,13,'#8a4a2a',700,1.25,'center'); }}; },
   },
-  m_home(w){ const P=UI.P, amt=CFG.gifts.home, paid=UI.homeDone(); const r=[P.sub('Add HedgeBurger to your phone screen for quick access!',w), P.art('pop_home_art.jpg',w,217/640)];
+  m_home(w){ const P=UI.P, amt=CFG.gifts.home, paid=UI.homeDone(); const r=[P.sub('Add Hedge Burger to your phone screen for quick access!',w), P.art('pop_home_art.jpg',w,217/640)];
     if(!paid) r.push(P.pill('+'+amt,'first time bonus'));
     r.push(P.yellow(UI._busy?'…':'Add Now',async()=>{ if(UI._busy) return; UI._busy=true; const res=await PF.addHome(); UI._busy=false;
       if(!res.ok){ UI.toast('Not added — you can try again any time'); return; }
       const can=await PF.shortcutReward(); UI.close();
-      if(can&&!UI.homeDone()){ S.mx.home=1; UI.giftPay(amt,'Home screen bonus'); } else { S.mx.home=S.mx.home||'added'; save(); UI.toast('HedgeBurger is on your phone screen!'); } },{disabled:!!UI._busy,id:'homeGo'}));
+      if(can&&!UI.homeDone()){ S.mx.home=1; UI.giftPay(amt,'Home screen bonus'); } else { S.mx.home=S.mx.home||'added'; save(); UI.toast('Hedge Burger is on your phone screen!'); } },{disabled:!!UI._busy,id:'homeGo'}));
     return r; },
   m_revisit(w){ const P=UI.P, amt=CFG.gifts.revisit, claimed=UI.revisitClaimed(), can=UI._rvCan&&!claimed;
     return [P.step(1,'Tap the button below.',w), P.yellow('Go',async()=>{ const r=await PF.startRevisit(); if(!r.ok){UI.toast('Could not open your profile');return} if(!PF.isMinis){ UI.toast('Welcome back from your Profile!'); UI.refreshRevisit(false); } },{disabled:claimed,id:'rvGo'}),
-      P.step(2,'Come back to HedgeBurger from your TikTok profile.',w), P.art('pop_revisit_profile.jpg',w,362/640), P.step(3,'Claim rewards.',w), P.coins('pop_revisit_coins.jpg','+'+amt,w,283/762),
+      P.step(2,'Come back to Hedge Burger from your TikTok profile.',w), P.art('pop_revisit_profile.jpg',w,362/640), P.step(3,'Claim rewards.',w), P.coins('pop_revisit_coins.jpg','+'+amt,w,283/762),
       P.note(claimed?'Gift claimed — come back tomorrow for another gift.':'Come back tomorrow for another gift.',w),
-      P.yellow(claimed?'Claimed ✓':'Claim',async()=>{ if(UI.revisitClaimed()) return; const ok=await PF.revisitReward(); if(!ok){ UI._rvCan=false; UI.toast('Open HedgeBurger from Profile › Recently played first'); return; }
+      P.yellow(claimed?'Claimed ✓':'Claim',async()=>{ if(UI.revisitClaimed()) return; const ok=await PF.revisitReward(); if(!ok){ UI._rvCan=false; UI.toast('Open Hedge Burger from Profile › Recently played first'); return; }
         S.mx.rvDay=dayKey(); PF._mockRevisit=false; UI.close(); UI.giftPay(amt,'Revisit gift'); },{disabled:!can,id:'rvClaim'})]; },
   m_share(w){ const P=UI.P, amt=CFG.gifts.share, claimed=UI.shareClaimed();
-    return [P.sub('Share HedgeBurger with friends and get a reward!',w), P.art('pop_share_art.jpg',w,451/640), P.pill(claimed?'Claimed today':'+'+amt,claimed?'new gift tomorrow':null),
+    return [P.sub('Share Hedge Burger with friends and get a reward!',w), P.art('pop_share_art.jpg',w,451/640), P.pill(claimed?'Claimed today':'+'+amt,claimed?'new gift tomorrow':null),
       P.yellow(claimed?'Share again':'Share Now',async()=>{ if(UI._busy) return; UI._busy=true; const r=await PF.share(); UI._busy=false; if(!r.ok){ UI.toast('Share cancelled'); return; }
         UI.close(); if(!UI.shareClaimed()){ S.mx.shDay=dayKey(); UI.giftPay(amt,'Share gift'); } else UI.toast('Thanks for sharing!'); },{icon:'share',id:'shGo'})]; },
   /* --- mock ad / mock TikTok sheet --- */

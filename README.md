@@ -1,6 +1,6 @@
-# Meow Burger
+# Hedge Burger
 
-Idle tycoon mini game for **TikTok Minis** (native canvas build) in the Meow series. It reuses the Meow Pizza v4.8 engine with Meow Burger data and art.
+Idle tycoon mini game for **TikTok Minis** (native canvas build). Hedgehog reskin of Meow Burger (Meow series), on the Meow Pizza v4.8 engine. Character art: `tools/build_hedgehog.py`; brand art: `tools/apply_brand_v11.py` (HedgeBurger asset packs v1–v1.2). Internal ids, save key and HS labels still use the Meow names.
 
 - Current version: **v1.6.4** (`VERSION` in `src/00_config.js`)
 - TikTok App ID / HS Game ID: `7699569778830231573`

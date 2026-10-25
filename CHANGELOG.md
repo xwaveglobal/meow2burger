@@ -2,7 +2,13 @@
 
 Engine history before Meow Burger (Meow Pizza v4.x) is in `docs/pizza-legacy/CHANGELOG_pizza.md`.
 
-## Unreleased — HedgeBurger v1.1 asset update
+## Unreleased — Hedge Burger v1.2 corrections
+- Public name is two words, "Hedge Burger" (page title, popups, share title, stage/spot names, project.config.json, package comments).
+- Corrected art from the v1.2 pack: loading title reads "Hedge Burger" (normal g), logo, Home/Profile guide images with the spaced name, revisit coin banner with H stamps (its v1.1 "cat-free" label was wrong).
+- Remaining cat/meow wording: boost "Meow Rush"/"MEOW RUSH" → "Hedge Burger"/"HEDGE BURGER" (label sized to fit its button), "Hedge cashier"/"Hedge cleaner" spots, "Hire a Hedge cashier/cleaner" tasks, loading "Calling the Hedge crew…" and "Ready! Hedge!".
+- Kept for HS / compatibility: ad placement label, reward key and item name "Meow Rush" (must match the HS dashboard), save key `meowburger.v3`, ids `meow_rush`, `cat01…`, file names `meow-config.js`, `cat_cola.png`.
+
+## HedgeBurger v1.1 asset update
 - Left walk: the 10 non-player roles walk to screen-left with their own drawn frames (`walk1–4_90`), no mirroring; sized to their right walk.
 - T-side chair: the 6 customers / VIPs sit there with the drawn front-left set (`sit_eat_left1` waiting, 1–4 while eating), no mirroring. L-side chair unchanged.
 - Branding: display name HedgeBurger (page title, popups, share title, stage/spot names, project.config.json projectname); drink shown as Hedge Cola (item id `drink` unchanged). Save key, ad labels and file names unchanged.

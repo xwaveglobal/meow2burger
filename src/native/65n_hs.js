@@ -97,5 +97,5 @@ PF.addHome=()=>HSGame?HSGame.tiktokMission.start('shortcut').then(s=>s==='starte
 PF.shortcutReward=()=>Promise.resolve(false);   /* paid by onGive when TikTok confirms */
 PF.startRevisit=()=>HSGame?HSGame.tiktokMission.start('profile').then(s=>s==='started'?{ok:true}:{ok:false,err:s}):Promise.resolve({ok:false,err:'unsupported'});
 PF.revisitReward=()=>HSGame?HSGame.tiktokMission.refresh().then(()=>HSGame.tiktokMission.done('profile')):Promise.resolve(false);
-PF.share=()=>HSGame?HSGame.share({title:'HedgeBurger',subtitle:'Run the cutest burger diner in town!'}).then(r=>r!==null||HSGame.lastShareError==='claimed'?{ok:true}:{ok:false,err:HSGame.lastShareError}):Promise.resolve({ok:false,err:'unsupported'});
+PF.share=()=>HSGame?HSGame.share({title:'Hedge Burger',subtitle:'Run the cutest burger diner in town!'}).then(r=>r!==null||HSGame.lastShareError==='claimed'?{ok:true}:{ok:false,err:HSGame.lastShareError}):Promise.resolve({ok:false,err:'unsupported'});
 { const o=UI.openRevisit; UI.openRevisit=function(){ UI._rvCan=true; o.call(UI); }; }
