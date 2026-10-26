@@ -1,11 +1,14 @@
 """Build the TikTok NATIVE package (no DOM): dist/native/
    game.json, project.config.json, game.js (main package, < 4 MB), img/ (loading + icons),
    art/ subpackage (all sprite PNGs + popup art, loaded with loadSubpackage('art')).
-   usage: python3 src/build_native.py [appid]"""
+   usage: python3 src/build_native.py [--test] [appid]
+   --test: QA build in dist/native_test/: auto play on (AUTO button) and game speed 1×/2×/3×/4× in Settings."""
 import os,re,sys,glob,base64,shutil,subprocess,json
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC=os.path.join(ROOT,'src'); NAT=os.path.join(SRC,'native'); ART=os.path.join(ROOT,'assets','minis')
-OUT=os.path.join(ROOT,'dist','native')
+TEST='--test' in sys.argv
+if TEST: sys.argv.remove('--test')
+OUT=os.path.join(ROOT,'dist','native_test' if TEST else 'native')
 # optional, never shipped/shared: src/native/hs-config.json = {"gameId":"...","sdkKey":"sk_live_...","placements":[<HS dashboard export>]}
 HSC=json.load(open(os.path.join(NAT,'hs-config.json'))) if os.path.exists(os.path.join(NAT,'hs-config.json')) else {}
 APPID=sys.argv[1] if len(sys.argv)>1 else str(HSC.get('gameId') or 'YOUR_TIKTOK_APP_ID')
@@ -35,6 +38,8 @@ for f in sorted(glob.glob(os.path.join(SRC,'[0-9]*.js'))):
     if b in('60_ui.js','65_minis_ui.js'): continue
     code=read(f)
     if b in('15_staff_sprites.js','16_more_sprites.js','17_pizza_art.js','18_env_art.js'): code=extract(code)
+    if b=='00_config.js' and TEST:   # QA build: auto play + speed buttons
+        code=must(code,'  autoPlay:false,','  autoPlay:true,'); code=must(code,'  testSpeed:false,','  testSpeed:true,')
     if b=='05_platform.js':  # native: missions / share go through HSGame (65n_hs.js); drop the direct TikTok fallbacks
         code=re.sub(r"\n      return new Promise\(res=>\{ try\{ T\.addShortcut\(.*?\n","\n      return Promise.resolve({ok:false,err:'use HSGame'}); },\n",code,count=1)
         code=re.sub(r"\n      if\(T&&T\.shareAppMessage\) return new Promise.*?\n","\n",code,count=1)
@@ -96,7 +101,7 @@ module.exports = {
 '''%(APPID,HSKEY))
 # ---- 4. configs
 json.dump({"deviceOrientation":"portrait","subpackages":[{"name":"art","root":"art/"}]},open(os.path.join(OUT,'game.json'),'w'),indent=2)
-json.dump({"appid":APPID,"projectname":"Hedge Burger","description":"Hedge Burger","compileType":"game",
+json.dump({"appid":APPID,"projectname":"Hedge Burger"+(" (test)" if TEST else ""),"description":"Hedge Burger"+(" — QA build: auto play, speed 1-4x" if TEST else ""),"compileType":"game",
            "setting":{"urlCheck":False,"es6":True,"postcss":True,"minified":True}},open(os.path.join(OUT,'project.config.json'),'w'),indent=2)
 # ---- 4b. HS dashboard JSON, NEXT TO the package (never uploaded): paste its iaa_config in HS → Ads Config → Edit raw JSON
 GAME_LABELS=re.findall(r"label:'([^']+)'",open(os.path.join(SRC,'05_platform.js')).read().split('const AD_PLACEMENTS=')[1].split('};')[0])
@@ -121,6 +126,6 @@ def size(p):
         for f in fs: t+=os.path.getsize(os.path.join(r,f))
     return t
 total=size(OUT); sub=size(os.path.join(OUT,'art')); main=total-sub
-print('native: %d sprite files, main %.2f MB, art %.2f MB, total %.2f MB'%(n[0],main/1e6,sub/1e6,total/1e6))
+print(('native TEST' if TEST else 'native')+': %d sprite files, main %.2f MB, art %.2f MB, total %.2f MB'%(n[0],main/1e6,sub/1e6,total/1e6))
 assert main<4*1024*1024, 'main package over 4 MB'
 assert total<30*1024*1024, 'package over 30 MB'

@@ -254,6 +254,8 @@ const UI={
       B.btn(UI._armed?'Tap again to confirm':'Restart restaurant',()=>{ if(!UI._armed){UI._armed=true;return} resetGame();UI.close();UI.toast('Fresh start!'); },{fill:['#ffb36b','#e07f3c'],id:'rst'})];
     if(!PF.isMinis){ const T=[['Reset daily gifts','days'],['Reset Add-to-Home','home'],['Next ad: no fill','fail'],['Next ad: closed early','quit'],['+500 coins','money']];
       r.push(B.note('Test tools (outside TikTok only)',w)); for(let i=0;i<T.length;i+=2) r.push({h:34,gap:6,draw(x,y,ww){ const bw=(ww-6)/2; [T[i],T[i+1]].forEach((tt,j)=>{ if(tt) button(x+j*(bw+6),y,bw,34,tt[0],()=>UI.testTool(tt[1]),{sz:12,id:'tt'+tt[1]}); }); }}); }
+    if(CFG.testSpeed){ r.push(B.note('Test build · game speed (AUTO button: OFF → ON → ×2)',w)); r.push({h:34,gap:6,draw(x,y,ww){ const bw=(ww-18)/4;
+      [1,2,3,4].forEach((v,j)=>button(x+j*(bw+6),y,bw,34,v+'×',()=>{S.qaSpeed=v;save();UI.toast('Game speed '+v+'×')},{sz:15,id:'spd'+v,fill:(S.qaSpeed||1)===v?['#8fd86a','#4fa63f']:['#fff4e3','#f3dfc3']})); }}); }
     r.push(B.note('Assets: '+rep.baked+' baked, '+rep.loaded+' loaded'+(rep.missing.length?', '+rep.missing.length+' missing':'')+' · Play time '+fmtTime(S.playTime)+' · v'+VERSION+' · '+(PF.isMinis?'TikTok native':'test'),w)); r.title='SETTINGS'; return r; },
   testTool(x){ const m=PF.mock; if(x==='days'){S.mx.rvDay='';S.mx.shDay='';PF._mockRevisit=false;UI._rvCan=false;save();UI.toast('Daily gifts reset')}
     if(x==='home'){S.mx.home=0;S.mx.homeAsked=0;save();UI.toast('Add-to-Home reset')} if(x==='fail'){m.adFailNext=true;UI.toast('Next ad will fail')} if(x==='quit'){m.adQuitNext=true;UI.toast('Next ad will be closed early')} if(x==='money'){S.money+=500;save()} },

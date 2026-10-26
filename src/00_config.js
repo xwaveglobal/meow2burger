@@ -37,6 +37,8 @@ const CFG={
   gifts:{revisit:100, share:50, home:100, showAfter:'t_upgrade'},
   /* Auto play (AUTO button). Off in this build: button hidden, saved S.auto ignored */
   autoPlay:false,
+  /* Test builds only (python3 src/build_native.py --test): game speed 1×/2×/3×/4× in Settings (S.qaSpeed; S.spd is the kitchen upgrade level). Off: always 1× */
+  testSpeed:false,
 };
 const round10=n=>Math.max(10,Math.round(n/10)*10);
 

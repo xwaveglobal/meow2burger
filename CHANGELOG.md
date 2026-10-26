@@ -2,6 +2,9 @@
 
 Engine history before Meow Burger (Meow Pizza v4.x) is in `docs/pizza-legacy/CHANGELOG_pizza.md`.
 
+## Unreleased — QA native build
+- `python3 src/build_native.py --test` builds `dist/native_test/`: auto play on (AUTO button OFF → ON → ×2) and game speed 1×/2×/3×/4× in Settings (`CFG.testSpeed`, saved as `S.qaSpeed`). The normal build keeps both off.
+
 ## Unreleased — Hedge Burger v1.2 corrections
 - Public name is two words, "Hedge Burger" (page title, popups, share title, stage/spot names, project.config.json, package comments).
 - Corrected art from the v1.2 pack: loading title reads "Hedge Burger" (normal g), logo, Home/Profile guide images with the spaced name, revisit coin banner with H stamps (its v1.1 "cat-free" label was wrong).

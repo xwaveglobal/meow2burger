@@ -78,7 +78,8 @@ let last=0,saveT=0;
    performance.now (TikTok native: no global performance) — a negative dt once sent the clock back 56 years */
 function frame(ts){try{ if(typeof ts!=='number'||!isFinite(ts)) ts=performance.now(); if(last===null||ts<last) last=ts;
     let dt=(ts-last)/1000; if(!(dt>0)) dt=0; dt=Math.min(.05,dt); last=ts;
-    if(!UI.modalOpen&&!paused){ const inp=getInput(); update(dt,inp); if(CFG.autoPlay&&S.auto===2&&AUTOP.manualT<=0) update(dt,inp); }
+    if(!UI.modalOpen&&!paused){ const inp=getInput(), spd=CFG.testSpeed?Math.max(1,Math.min(4,S.qaSpeed|0||1)):1;   // test speed: the same fixed step run 1–4 times per frame
+      for(let i=0;i<spd;i++){ update(dt,inp); if(CFG.autoPlay&&S.auto===2&&AUTOP.manualT<=0) update(dt,inp); } }
     render();UI.frame();saveT+=dt;if(saveT>2){saveT=0;save()}
   }catch(err){console.error(err);window.__cpFrameErrN=(window.__cpFrameErrN||0)+1;if(!window.__cpFrameErr){window.__cpFrameErr=true;UI.toast('Error: '+err.message)}}
   requestAnimationFrame(frame)}
